@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>デザインの見本帳 NAME</title>
+<!-- 使い方（Claude へ）：
+  1. :root の --c-* を、決まった色に置き換える（役の名前はそのまま）。暗い地でも同じ役の名前で入れる（bg＝背景・surface＝面・ink＝文字・ink2＝補足の文字・on-accent＝強調の上の文字・special-*＝章の区切りなど特別な所）
+     色見本（3. 色）の #コードの文字も一緒に直す
+  2. --f-* を、決まった書体に置き換える（Google Fonts を使うなら <link> を足す）。斜体の無い書体を傾けない（.s-acc・.s-num の italic は、斜体のある書体のときだけ）
+  2b. --r（角の丸み）は質問6の答えで必ず置き換える。暗い地では影より縁の線（.box の border）
+  3. .screen の中の3つ（A/B/C）を、決まった画面の型に合わせて描き直す。16:9 のまま
+  4. 印（.mark）と背景（.bg-main / .bg-special）を、決まった物に描き直す（CSS・SVG で）
+  5. 「やらないこと」を見本帳の中で破らない
+  ページ自体（説明の部分）は読みやすさ優先：明るい地・暗い文字。画面の見本（.screen）だけがそのデザイン -->
+<style>
+:root{
+  --c-bg:#F4F1EA; --c-surface:#FFFFFF; --c-ink:#1E2A33; --c-ink2:#4A5560; --c-accent:#FF5A36; --c-on-accent:#1E2A33;
+  --c-soft:#F2C94C; --c-line:#B8B1A3; --c-ng:#8A4B3A; --c-special-bg:#1E2A33; --c-special-ink:#F4F1EA;
+  --f-head:"Hiragino Mincho ProN","Noto Serif JP",serif; --f-body:"Hiragino Sans","Noto Sans JP",sans-serif;
+  --f-accent:Didot,"Playfair Display",serif; --f-num:"DIN Alternate","Oswald",sans-serif;
+  --r:22; /* px ではなく数（.box で cqw に直す）*/
+  --page:#FBFAF7; --page-ink:#1f2328; --page-mut:#5f6670; --page-line:#e3e1dc;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--page:#16181b;--page-ink:#eceae6;--page-mut:#a3a8ae;--page-line:#2b2f34}}
+:root[data-theme="dark"]{--page:#16181b;--page-ink:#eceae6;--page-mut:#a3a8ae;--page-line:#2b2f34}
+*{box-sizing:border-box}
+body{margin:0;background:var(--page);color:var(--page-ink);font-family:var(--f-body);line-height:1.75;font-size:16px}
+.wrap{max-width:960px;margin:0 auto;padding:24px 16px 80px}
+h1{font-family:var(--f-head);font-size:1.9em;margin:.2em 0}
+h2{font-family:var(--f-head);font-size:1.25em;margin:2em 0 .6em;padding-left:10px;border-left:6px solid var(--c-accent)}
+.mut{color:var(--page-mut);font-size:.92em}
+.card{border:1px solid var(--page-line);border-radius:16px;padding:14px 18px;margin:12px 0}
+.refs{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px}.refs img{width:100%;height:auto;border-radius:10px}
+.sw{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px}
+.sw div{border-radius:14px;overflow:hidden;border:1px solid var(--page-line)}.sw i{display:block;height:70px}.sw p{margin:0;padding:6px 10px;font-size:.85em}
+table{border-collapse:collapse;width:100%;font-size:.95em}th,td{border:1px solid var(--page-line);padding:8px 10px;text-align:left;vertical-align:top}
+/* ---- 画面の見本（16:9）---- */
+.screen{position:relative;width:100%;aspect-ratio:16/9;border-radius:14px;overflow:hidden;margin:10px 0 4px;container-type:inline-size;color:var(--c-ink)}
+.bg-main{background:linear-gradient(135deg,var(--c-bg),var(--c-surface))}
+.bg-special{background:radial-gradient(circle at 30% 40%,color-mix(in srgb,var(--c-soft) 30%,var(--c-special-bg)),var(--c-special-bg))}
+.mark{position:absolute;inset:4cqw;border:0;pointer-events:none}
+.mark::before,.mark::after{content:"";position:absolute;width:4cqw;height:4cqw;border:.35cqw solid var(--c-line)}
+.mark::before{left:0;top:0;border-right:0;border-bottom:0}.mark::after{right:0;bottom:0;border-left:0;border-top:0}
+.s-head{font-family:var(--f-head);font-weight:700}.s-acc{font-family:var(--f-accent)}.s-num{font-family:var(--f-num);font-weight:700}
+.pill{display:inline-block;background:var(--c-accent);color:var(--c-on-accent);border-radius:999px;padding:.3cqw 1.6cqw}
+.box{background:var(--c-surface);border:.15cqw solid color-mix(in srgb,var(--c-line) 50%,transparent);border-radius:calc(var(--r) * .1cqw);box-shadow:0 1cqw 3cqw color-mix(in srgb,var(--c-ink) 18%,transparent)}
+.center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.4cqw;text-align:center}
+.ng{display:flex;flex-wrap:wrap;gap:8px}.ng span{border:1px solid var(--page-line);border-radius:999px;padding:4px 12px;text-decoration:line-through}
+</style></head>
+<body><div class="wrap">
+
+<h1>デザインの見本帳 <span style="font-family:var(--f-accent);font-style:italic">NAME</span></h1>
+<p class="mut">何に使うか：PURPOSE</p>
+
+<h2>1. 参考画像から読み取ったこと</h2>
+<div class="refs"><!-- 相手の参考画像を小さく並べる（任意）--></div>
+<div class="card"><ul>
+  <li><b>世界観</b>：WORLD</li>
+  <li><b>形容詞</b>：ADJ</li>
+</ul></div>
+
+<h2>2. 画面の見本（16:9）</h2>
+<p class="mut">A：章の区切り</p>
+<div class="screen bg-special"><div class="mark"></div>
+  <div class="center" style="color:var(--c-special-ink)">
+    <div class="s-acc" style="font-size:3cqw">Chapter One</div>
+    <div class="s-head" style="font-size:7cqw">章のタイトル</div>
+  </div></div>
+<p class="mut">B：目次（今の項目だけ強調色）</p>
+<div class="screen bg-main"><div class="mark"></div>
+  <div class="center" style="gap:1.2cqw">
+    <div class="box" style="width:60cqw;padding:1.4cqw 3cqw;font-size:2.6cqw;opacity:.55"><span class="s-num">01</span>　項目</div>
+    <div class="box" style="width:60cqw;padding:1.4cqw 3cqw;font-size:2.6cqw;background:var(--c-accent);color:var(--c-on-accent)"><span class="s-num">02</span>　今の項目</div>
+    <div class="box" style="width:60cqw;padding:1.4cqw 3cqw;font-size:2.6cqw;opacity:.55"><span class="s-num">03</span>　項目</div>
+  </div></div>
+<p class="mut">C：数字を大きく見せる</p>
+<div class="screen bg-main"><div class="mark"></div>
+  <div class="center">
+    <div class="box" style="padding:2cqw 6cqw"><div class="s-num" style="font-size:12cqw;line-height:1">284<span style="font-size:5cqw">万円</span></div></div>
+    <span class="pill" style="font-size:2.4cqw">ラベル</span>
+  </div></div>
+
+<h2>3. 色（役つき）</h2>
+<div class="sw">
+  <div><i style="background:var(--c-bg)"></i><p>背景 #F4F1EA</p></div>
+  <div><i style="background:var(--c-surface)"></i><p>面 #FFFFFF</p></div>
+  <div><i style="background:var(--c-ink)"></i><p>文字 #1E2A33</p></div>
+  <div><i style="background:var(--c-ink2)"></i><p>補足の文字 #4A5560</p></div>
+  <div><i style="background:var(--c-accent)"></i><p>強調（1つだけ）#FF5A36</p></div>
+  <div><i style="background:var(--c-on-accent)"></i><p>強調の上の文字 #1E2A33</p></div>
+  <div><i style="background:var(--c-soft)"></i><p>やわらかい強調 #F2C94C</p></div>
+  <div><i style="background:var(--c-line)"></i><p>線・飾り #B8B1A3</p></div>
+  <div><i style="background:var(--c-ng)"></i><p>NG の印 #8A4B3A</p></div>
+</div>
+
+<h2>4. 文字</h2>
+<table><tr><th>役</th><th>書体</th><th>見本</th></tr>
+<tr><td>見出し</td><td>HEAD_FONT</td><td style="font-family:var(--f-head);font-size:1.4em">見出しの文字</td></tr>
+<tr><td>説明・札</td><td>BODY_FONT</td><td style="font-family:var(--f-body)">説明の文字</td></tr>
+<tr><td>アクセント</td><td>ACCENT_FONT</td><td style="font-family:var(--f-accent);font-style:italic;font-size:1.3em">Today's</td></tr>
+<tr><td>数字</td><td>NUM_FONT</td><td style="font-family:var(--f-num);font-weight:700;font-style:italic;font-size:1.4em">01 284</td></tr>
+</table>
+
+<h2>5. 小さな印・背景</h2>
+<div class="card"><ul><li><b>印</b>：MARK</li><li><b>いつもの背景</b>：BG_MAIN</li><li><b>特別な所の背景</b>：BG_SPECIAL</li></ul></div>
+
+<h2>6. やらないこと</h2>
+<div class="ng"><span>NG1</span><span>NG2</span><span>NG3</span></div>
+
+</div></body></html>
