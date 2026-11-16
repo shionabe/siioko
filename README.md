@@ -5,6 +5,7 @@ YouTube「AI動画ラボ」の動画で紹介した仕組みを、だれでも�
 | スキル | できること |
 |---|---|
 | [youtube-design-system-builder](#youtube-デザインシステム構築スキル) | 集めた参考画像から、動画の「見た目の決まり」と見本帳（HTML）を作る |
+| [youtube-motion-builder](#youtube-モーション構築スキル) | 動きの見本の探し方（検索ワード）と、Claude への頼み方・再現・保存 |
 | [short-video-auto-edit](#ショート動画の半自動編集スキルclaude-用) | ショート動画1本を、台本から投稿の準備まで |
 
 ---
@@ -32,6 +33,32 @@ cp -r siioko/youtube-design-system-builder ~/.claude/skills/
 
 ## 使い方
 Claude に「デザインシステムを作りたい」と話しかけて、集めた画像を貼るだけ。
+
+---
+
+# YouTube モーション構築スキル
+
+AI は動きが苦手と言われますが、**動きの見本を見せる**と、テンポや出し方までかなり再現してくれます。このスキルは、見本の探し方から Claude への頼み方、保存して使い回すまでを一緒に進めます。
+
+- 「どこで使う動きか」（章の区切り・目次・数字・流れ図・文字の出し方 など）を、選んで答える形で聞いてきます
+- Pinterest・Instagram・YouTube で探すための**検索ワード**（英語・日本語）が出ます
+- 気に入った見本を貼ると、動きを分解して、**Claude にそのまま貼れる依頼文**を作ります
+- 再現して見本と並べて確かめ、うまくいった動きは名前を付けて保存。次から一言で呼び出せます
+
+## 入れ方
+
+**claude.ai（ブラウザ・アプリ）**
+1. このページの一覧にある `youtube-motion-builder.skill` を開き、右上の「ダウンロード」ボタン（↓）で保存
+2. claude.ai の「設定 → Skills → 追加 → Skills をアップロード」で、保存したファイルを選ぶ
+
+**Claude Code**
+```
+git clone https://github.com/shionabe/siioko.git
+cp -r siioko/youtube-motion-builder ~/.claude/skills/
+```
+
+## 使い方
+Claude に「モーションを作りたい」と話しかけるだけ。
 
 ---
 
