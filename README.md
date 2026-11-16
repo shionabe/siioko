@@ -1,3 +1,40 @@
+# AI動画ラボの配布スキル（Claude 用）
+
+YouTube「AI動画ラボ」の動画で紹介した仕組みを、だれでも使える形にしたスキルです。
+
+| スキル | できること |
+|---|---|
+| [youtube-design-system-builder](#youtube-デザインシステム構築スキル) | 集めた参考画像から、動画の「見た目の決まり」と見本帳（HTML）を作る |
+| [short-video-auto-edit](#ショート動画の半自動編集スキルclaude-用) | ショート動画1本を、台本から投稿の準備まで |
+
+---
+
+# YouTube デザインシステム構築スキル
+
+Claude に「いい感じに」と頼んでも、あなたの「いい感じ」は伝わりません。色・文字・背景・使わない物までを言葉にして渡すと、AI と認識がそろいます。このスキルは、あなたが Pinterest などで集めた画像から、その「言葉」を一緒に作ります。
+
+- 画像を貼ると、Claude が画像を読み、**7つの質問を1つずつ、選んで答える形**で聞いてきます（印象・色・文字・小さな印・背景・カードの見た目・やらないこと）
+- 毎回、Pinterest と Google Fonts で探すための**検索ワード**も出ます
+- 最後に **見本帳（1つの HTML ファイル）** と、AI に毎回渡す **design-system.md** ができます
+- 上品・ポップ・ダーク・かわいい など、ジャンルは問いません
+
+## 入れ方
+
+**claude.ai（ブラウザ・アプリ）**
+1. このページの一覧にある `youtube-design-system-builder.skill` を開き、右上の「ダウンロード」ボタン（↓）で保存
+2. claude.ai の「設定 → Skills → 追加 → Skills をアップロード」で、保存したファイルを選ぶ
+
+**Claude Code**
+```
+git clone https://github.com/shionabe/siioko.git
+cp -r siioko/youtube-design-system-builder ~/.claude/skills/
+```
+
+## 使い方
+Claude に「デザインシステムを作りたい」と話しかけて、集めた画像を貼るだけ。
+
+---
+
 # ショート動画の半自動編集スキル（Claude 用）
 
 TikTok・Instagram リール・YouTube ショートの動画1本を、Claude に係を分けて任せて作るスキルです。
