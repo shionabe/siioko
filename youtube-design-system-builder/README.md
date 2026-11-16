@@ -18,8 +18,16 @@ AI に動画の編集を頼むときの「見た目の決まり」を、あな�
 Pinterest での検索ワードは `references/questions.md` の最後にあります。
 
 ## 入れ方
-- **Claude（claude.ai）**：このフォルダを zip にして、設定 → スキル（プラグイン）→ アップロード
-- **Claude Code**：このフォルダを `~/.claude/skills/` に置く
+
+**claude.ai（ブラウザ・アプリ）**
+1. ここから `youtube-design-system-builder.skill` をダウンロード：https://github.com/shionabe/siioko/raw/master/youtube-design-system-builder.skill
+2. claude.ai の「設定 → Skills → 追加 → Skills をアップロード」で、ダウンロードしたファイルを選ぶ
+
+**Claude Code**
+```
+git clone https://github.com/shionabe/siioko.git
+cp -r siioko/youtube-design-system-builder ~/.claude/skills/
+```
 
 ## 使い方
 「デザインシステムを作りたい」と言って、Pinterest などで集めた画像を貼るだけです。
