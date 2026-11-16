@@ -7,6 +7,8 @@ YouTube「AI動画ラボ」の動画で紹介した仕組みを、だれでも�
 | [youtube-design-system-builder](#youtube-デザインシステム構築スキル) | 集めた参考画像から、動画の「見た目の決まり」と見本帳（HTML）を作る |
 | [youtube-motion-builder](#youtube-モーション構築スキル) | 動きの見本の探し方（検索ワード）と、Claude への頼み方・再現・保存 |
 | [short-video-auto-edit](#ショート動画の半自動編集スキルclaude-用) | ショート動画1本を、台本から投稿の準備まで |
+| [cinematic-lighting](#光のプロンプト50種cinematic-lighting) | 画像・動画の光だけを変えてシネマティックに（光50種） |
+| [cinematic-color-grades](#カラーグレーディング34種cinematic-color-grades) | 画像・動画に映画の色を LUT でかける（34種・LUT つき） |
 
 ---
 
@@ -107,6 +109,43 @@ Claude に「ショート動画を作りたい」と話しかけるだけ。最�
 - 法律のチェックは**目安**です。最終の判断はご自身で（迷ったら専門家・メーカーに）
 - 見本の動画・音楽をそのまま使わないでください（著作権・アカウントの評価）
 - AI の生成でお金を使うときは、Claude が見積もりを出して確認します
+
+
+---
+
+# 光のプロンプト50種（cinematic-lighting）
+
+AI に「シネマティックに」とだけ頼んでも、映画っぽくはなりません。足りないのは光の指定です。画像を Claude に入れて `/rembrandt-light` のようなコマンドを送ると、**光だけを変える**英語のプロンプトが返ってきます。
+
+- 窓の光・レンブラント・ネオン・月明かり・逆光・ヘイズ・シルエットなど50種
+- 「シネマティックにしたい」とだけ伝えると、場面に合う光を3つ提案
+- Higgsfield の MCP をつないでいれば、そのまま画像も作れます（クレジットがかかるので、作る前に確認します）
+
+## 入れ方
+**claude.ai**：`cinematic-lighting/cinematic-lighting.skill` を開いて「ダウンロード」（↓）→ claude.ai の「設定 → Skills → 追加 → Skills をアップロード」
+**Claude Code**：
+```
+git clone https://github.com/shionabe/siioko.git
+cp -r siioko/cinematic-lighting ~/.claude/skills/
+```
+
+---
+
+# カラーグレーディング34種（cinematic-color-grades）
+
+画像や動画に、映画のような色を LUT でかけるスキルです。生成ではなく色を「かける」だけなので、クレジットはかかりません。
+
+- ティール＆オレンジ・銀残し・テクニカラー・スプリットトーン・フィルムプリント・70年代ビンテージなど34種
+- 画像や動画を Claude に入れて `/teal-and-orange` のようなコマンドを送ると、色をかけたファイルと元との見比べが返ってきます
+- LUT だけ使いたい方は `cinematic-color-grades/cinematic-color-grades_LUT34.zip`（Premiere・DaVinci・Final Cut・Filmora・CapCut で使えます）
+
+## 入れ方
+**claude.ai**：`cinematic-color-grades/cinematic-color-grades.skill` を開いて「ダウンロード」（↓）→ claude.ai の「設定 → Skills → 追加 → Skills をアップロード」
+**Claude Code**：
+```
+git clone https://github.com/shionabe/siioko.git
+cp -r siioko/cinematic-color-grades ~/.claude/skills/
+```
 
 ## ライセンス
 MIT
