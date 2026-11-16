@@ -1,6 +1,6 @@
 ---
 name: cinematic-color-grades
-description: 画像や動画に、映画のような色（カラーグレーディング）を LUT でかけるスキル。34種の LUT（ティール＆オレンジ・銀残し・テクニカラー・スプリットトーン・フィルムプリント・70年代ビンテージなど）を同梱し、スクリプトでかけて、元との見比べも返す。クレジットはかからない。「カラーグレーディング」「色補正」「LUT」「映画っぽい色」「ルック」「この色にしたい」「色見本」と言われたとき、34種の名前が出たとき、`/teal-and-orange` `/bleach-bypass` のような色のコマンドが送られたときは、必ずこのスキルを使う。
+description: 画像や動画に、映画のような色（カラーグレーディング）を LUT でかけるスキル。62種の LUT（ティール＆オレンジ・銀残し・テクニカラー・スプリットトーン・フィルムプリント・70年代ビンテージなどの色の型34種と、『真珠の耳飾りの少女』『グランド・ブダペスト・ホテル』『アメリ』など映画の色28種）を同梱し、スクリプトでかけて、元との見比べも返す。クレジットはかからない。「カラーグレーディング」「色補正」「LUT」「映画っぽい色」「ルック」「この色にしたい」「色見本」と言われたとき、62種の名前や映画の名前が出たとき、`/teal-and-orange` `/bleach-bypass` のような色のコマンドが送られたときは、必ずこのスキルを使う。
 ---
 
 # cinematic-color-grades｜映画の色を LUT でかける
@@ -32,7 +32,7 @@ Keep the same person, pose, framing and camera position. OBJECT COLORS: the wall
 ## LUT は光を作れない
 LUT は撮った絵の色を変えるだけです。光の向きや影の形は変わりません。光を変えたいときは、生成のときに光を書きます（光のスキル：cinematic-lighting）。
 
-## コマンドの一覧（34種）
+## コマンドの一覧（62種）
 | # | コマンド | 色 | 日本語 |
 |---|---|---|---|
 | 1 | `/high-key-airy` | High-Key Airy | ハイキー・エアリー |
@@ -69,3 +69,31 @@ LUT は撮った絵の色を変えるだけです。光の向きや影の形は�
 | 32 | `/thermal` | Thermal | サーマル |
 | 33 | `/earth-tones` | Earth Tones | アースカラー |
 | 34 | `/blown-out-highlights` | Blown-Out Highlights | ブロウンアウト・ハイライト |
+| 35 | `/pearl-earring` | Girl with a Pearl Earring | 真珠の耳飾りの少女 |
+| 36 | `/lady-on-fire` | Portrait of a Lady on Fire | 燃ゆる女の肖像 |
+| 37 | `/tulip-fever` | Tulip Fever | チューリップ・フィーバー |
+| 38 | `/eternitys-gate` | At Eternity's Gate | 永遠の門 ゴッホの見た未来 |
+| 39 | `/danish-girl` | The Danish Girl | リリーのすべて |
+| 40 | `/ophelia` | Ophelia | オフィーリア |
+| 41 | `/marie-antoinette` | Marie Antoinette | マリー・アントワネット |
+| 42 | `/the-favourite` | The Favourite | 女王陛下のお気に入り |
+| 43 | `/barry-lyndon` | Barry Lyndon | バリー・リンドン |
+| 44 | `/amadeus` | Amadeus | アマデウス |
+| 45 | `/anna-karenina` | Anna Karenina | アンナ・カレーニナ |
+| 46 | `/emma` | Emma. | EMMA エマ |
+| 47 | `/jeanne-du-barry` | Jeanne du Barry | ジャンヌ・デュ・バリー |
+| 48 | `/the-duchess` | The Duchess | ある公爵夫人の生涯 |
+| 49 | `/crimson-peak` | Crimson Peak | クリムゾン・ピーク |
+| 50 | `/pans-labyrinth` | Pan's Labyrinth | パンズ・ラビリンス |
+| 51 | `/shape-of-water` | The Shape of Water | シェイプ・オブ・ウォーター |
+| 52 | `/the-illusionist` | The Illusionist | 幻影師アイゼンハイム |
+| 53 | `/stardust` | Stardust | スターダスト |
+| 54 | `/azkaban` | Harry Potter and the Prisoner of Azkaban | ハリー・ポッターとアズカバンの囚人 |
+| 55 | `/grand-budapest` | The Grand Budapest Hotel | グランド・ブダペスト・ホテル |
+| 56 | `/amelie` | Amélie | アメリ |
+| 57 | `/pride-and-prejudice` | Pride & Prejudice | プライドと偏見 |
+| 58 | `/atonement` | Atonement | つぐない |
+| 59 | `/little-women` | Little Women | ストーリー・オブ・マイライフ／わたしの若草物語 |
+| 60 | `/jane-eyre` | Jane Eyre | ジェーン・エア |
+| 61 | `/midnight-in-paris` | Midnight in Paris | ミッドナイト・イン・パリ |
+| 62 | `/chocolat` | Chocolat | ショコラ |
