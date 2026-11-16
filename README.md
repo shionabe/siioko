@@ -8,7 +8,7 @@ YouTube「AI動画ラボ」の動画で紹介した仕組みを、だれでも�
 | [youtube-motion-builder](#youtube-モーション構築スキル) | 動きの見本の探し方（検索ワード）と、Claude への頼み方・再現・保存 |
 | [short-video-auto-edit](#ショート動画の半自動編集スキルclaude-用) | ショート動画1本を、台本から投稿の準備まで |
 | [cinematic-lighting](#光のプロンプト50種cinematic-lighting) | 画像・動画の光だけを変えてシネマティックに（光50種） |
-| [cinematic-color-grades](#カラーグレーディング34種cinematic-color-grades) | 画像・動画に映画の色を LUT でかける（34種・LUT つき） |
+| [cinematic-color-grades](#カラーグレーディング62種cinematic-color-grades) | 画像・動画に映画の色を LUT でかける（62種・LUT つき） |
 
 ---
 
@@ -131,13 +131,13 @@ cp -r siioko/cinematic-lighting ~/.claude/skills/
 
 ---
 
-# カラーグレーディング34種（cinematic-color-grades）
+# カラーグレーディング62種（cinematic-color-grades）
 
 画像や動画に、映画のような色を LUT でかけるスキルです。生成ではなく色を「かける」だけなので、クレジットはかかりません。
 
-- ティール＆オレンジ・銀残し・テクニカラー・スプリットトーン・フィルムプリント・70年代ビンテージなど34種
+- ティール＆オレンジ・銀残し・テクニカラー・スプリットトーン・フィルムプリント・70年代ビンテージなどの色の型34種と、『真珠の耳飾りの少女』『グランド・ブダペスト・ホテル』『アメリ』など映画の色28種
 - 画像や動画を Claude に入れて `/teal-and-orange` のようなコマンドを送ると、色をかけたファイルと元との見比べが返ってきます
-- LUT だけ使いたい方は `cinematic-color-grades/cinematic-color-grades_LUT34.zip`（Premiere・DaVinci・Final Cut・Filmora・CapCut で使えます）
+- LUT だけ使いたい方は `cinematic-color-grades/cinematic-color-grades_LUT62.zip`（Premiere・DaVinci・Final Cut・Filmora・CapCut で使えます）
 
 ## 入れ方
 **claude.ai**：`cinematic-color-grades/cinematic-color-grades.skill` を開いて「ダウンロード」（↓）→ claude.ai の「設定 → Skills → 追加 → Skills をアップロード」
