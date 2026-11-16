@@ -8,8 +8,16 @@ YouTube・SNS の動画の「モーション（図や文字が動いて出てく
 - 再現して見本と並べて確かめ、うまくいった動きは**名前を付けて保存**。次から一言で呼び出せます
 
 ## 入れ方
-- **Claude（claude.ai）**：`youtube-motion-builder.skill` をダウンロードして、設定 → Skills → 追加 → Skills をアップロード
-- **Claude Code**：このフォルダを `~/.claude/skills/` に置く
+
+**claude.ai（ブラウザ・アプリ）**
+1. ここから `youtube-motion-builder.skill` をダウンロード：https://github.com/shionabe/siioko/raw/master/youtube-motion-builder.skill
+2. claude.ai の「設定 → Skills → 追加 → Skills をアップロード」で、ダウンロードしたファイルを選ぶ
+
+**Claude Code**
+```
+git clone https://github.com/shionabe/siioko.git
+cp -r siioko/youtube-motion-builder ~/.claude/skills/
+```
 
 ## 使い方
 「モーションを作りたい」と話しかけるだけ。見た目の決まり（色・文字）がまだなら、先に youtube-design-system-builder を使うと仕上がりがそろいます。
