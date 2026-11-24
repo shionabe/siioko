@@ -9,6 +9,7 @@ YouTube「AI動画ラボ」の動画で紹介した仕組みを、だれでも�
 | [short-video-auto-edit](#ショート動画の半自動編集スキルclaude-用) | ショート動画1本を、台本から投稿の準備まで |
 | [cinematic-lighting](#光のプロンプト50種cinematic-lighting) | 画像・動画の光だけを変えてシネマティックに（光50種） |
 | [cinematic-color-grades](#カラーグレーディング62種cinematic-color-grades) | 画像・動画に映画の色を LUT でかける（62種・LUT つき） |
+| [cinematic-shot-director](#ショート構図カメラワークの提案cinematic-shot-director) | やりたいことと気持ちを答えるだけで、ショット・構図・カメラワークを2案とプロンプトで提案（構図26・ショット28・カメラワーク40） |
 
 ---
 
@@ -149,3 +150,22 @@ cp -r siioko/cinematic-color-grades ~/.claude/skills/
 
 ## ライセンス
 MIT
+
+---
+
+# ショート・構図・カメラワークの提案（cinematic-shot-director）
+
+キャラクターと背景の画像を渡して、「この人が何をするか」「どんな気持ちか」を答えるだけで、ショットの大きさ・構図・カメラワークを2案（王道／意外な案）と理由で提案し、そのまま貼れる英語のプロンプトまで書くスキルです。
+
+- 中身：構図26種・ショット28種・カメラワーク40種
+- 記事（構図26選）：https://higgsfield.ai/@shion_movie_creator/blogs/26-cinematic-compositions-jp
+
+## 入れ方
+
+**claude.ai**：`cinematic-shot-director/cinematic-shot-director.skill` を開いて「ダウンロード」（↓）→ claude.ai の「設定 → Skills → 追加 → Skills をアップロード」
+
+**Claude Code**
+```
+git clone https://github.com/shionabe/siioko.git
+cp -r siioko/cinematic-shot-director ~/.claude/skills/
+```
